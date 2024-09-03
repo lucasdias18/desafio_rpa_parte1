@@ -1,0 +1,219 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Download_tabela" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_OpportunitiesTable" Type="OutArgument(si:FileInfo)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>667,1629</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Download_tabela_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Download_tabela" sap:VirtualizedContainerService.HintSize="592,1564" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Sales Opportunities" sap:VirtualizedContainerService.HintSize="530,1476" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="f93ccc88-2ce0-46c0-893a-338a4408590b" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="496,1236" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="dataOpportunitiesString" />
+              <Variable x:TypeArguments="sd:DataRow" Name="row" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Export'" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93ccc88-2ce0-46c0-893a-338a4408590b" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.rpasamples.com/opportunities" CVScreenId="d86da10e-9d6a-4e3f-9188-815dc3900932" CvElementArea="1027, 211, 91, 39" CvTextArea="1050, 222, 45, 17" CvTextArgument="Export" CvType="Button" DesignTimeRectangle="1029, 212, 88, 36" DesignTimeScaleFactor="1" ElementType="Button" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' type='' class='btn-export' aaname=' Export ' check:innerText='Export' /&gt;" Guid="5f9a2112-ea51-447d-8a27-a18f1b379079" InformativeScreenshot="baefa767c88f76625eaf6bbfde26e9ab.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sales Opportunities' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="d86da10e-9d6a-4e3f-9188-815dc3900932" CvTextArea="185, 220, 172, 22" CvTextArgument="Report: Opportunities" CvType="Text" DesignTimeRectangle="186, 217, 170, 26" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Report: Opportunities' parentid='app' tag='DIV' type='' class='inline-block title-text' check:innerText='Report: Opportunities' /&gt;" Guid="9b0356ef-3e3e-40d6-abf4-4060c2d04067" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Export View'" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93ccc88-2ce0-46c0-893a-338a4408590b" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.rpasamples.com/opportunities" CVScreenId="478f996f-f80c-4e33-987f-6cef6b09d278" CvElementArea="662, 365, 188, 134" CvType="InputBox" DesignTimeRectangle="662, 364, 188, 136" DesignTimeScaleFactor="1" FuzzySelectorArgument="&lt;webctrl class='export-option' parentid='app' tag='DIV' type='' aaname='' check:innerText='Details Only&amp;#xA;Export only the detail rows.' /&gt;" Guid="fdb27454-a65f-4abc-a39b-5b171c9d007e" InformativeScreenshot="a87270e12ff0ea5695db280f61af1606.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sales Opportunities' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="478f996f-f80c-4e33-987f-6cef6b09d278" CvTextArea="457, 335, 87, 18" CvTextArgument="Export View" CvType="Text" DesignTimeRectangle="459, 332, 448, 24" ElementType="Text" FuzzySelectorArgument="&lt;webctrl class='options-header' parentid='app' tag='DIV' type='' aaname='Export View' check:innerText='Export View' /&gt;" Guid="a0f0136d-a1ab-4302-9aff-df391063b71c" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Export'" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93ccc88-2ce0-46c0-893a-338a4408590b" Version="V4">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.rpasamples.com/opportunities" CVScreenId="78debb12-8378-4391-909e-9fe726ae9216" CvElementArea="828, 591, 80, 36" CvTextArea="847, 601, 43, 16" CvTextArgument="Export" CvType="Button" DesignTimeRectangle="831, 593, 76, 32" DesignTimeScaleFactor="1" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname=' Export ' tag='BUTTON' type='' class='export-common footer-button' check:innerText='Export' /&gt;" Guid="3bc43e10-f6ec-44ed-9459-83dd70ae760b" InformativeScreenshot="0f58e5c53b4bf9255e860bde85f58b00.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sales Opportunities' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="443, 585, 480, 48" FuzzySelectorArgument="&lt;webctrl class='popup-footer' parentid='app' tag='DIV' type='' aaname='' check:innerText='Cancel&amp;#xA;Export' /&gt;" Guid="df23f02e-db6e-4c7b-b867-c0e8d247b465" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[&quot;C:\Users\&quot; + Environment.UserName + &quot;\Downloads&quot;]" File="[out_OpportunitiesTable]" sap:VirtualizedContainerService.HintSize="434,303" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
+              <ui:GetLastDownloadedFile.Body>
+                <ActivityAction />
+              </ui:GetLastDownloadedFile.Body>
+            </ui:GetLastDownloadedFile>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Caminho: &quot; + out_OpportunitiesTable.ToString]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1382, 784" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="b2976fc8473e57a3f75741222fb28e6e.jpg" Selector="&lt;html app='chrome.exe' title='Sales Opportunities' /&gt;" Title="Sales Opportunities" Url="https://www.rpasamples.com/opportunities" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
