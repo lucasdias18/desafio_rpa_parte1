@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>667,1629</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>667,1496</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Download_tabela_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -117,19 +117,19 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Download_tabela" sap:VirtualizedContainerService.HintSize="592,1564" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extrair dados do site" sap:VirtualizedContainerService.HintSize="592,1431" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Sales Opportunities" sap:VirtualizedContainerService.HintSize="530,1476" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="f93ccc88-2ce0-46c0-893a-338a4408590b" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: acessar site" sap:VirtualizedContainerService.HintSize="530,1343" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="f93ccc88-2ce0-46c0-893a-338a4408590b" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Fazer" sap:VirtualizedContainerService.HintSize="496,1236" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Fazer download" sap:VirtualizedContainerService.HintSize="496,1103" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="dataOpportunitiesString" />
               <Variable x:TypeArguments="sd:DataRow" Name="row" />
@@ -160,7 +160,7 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Export View'" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93ccc88-2ce0-46c0-893a-338a4408590b" Version="V4">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Export View' para selecionar o tipo da tabela" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93ccc88-2ce0-46c0-893a-338a4408590b" Version="V4">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.rpasamples.com/opportunities" CVScreenId="478f996f-f80c-4e33-987f-6cef6b09d278" CvElementArea="662, 365, 188, 134" CvType="InputBox" DesignTimeRectangle="662, 364, 188, 136" DesignTimeScaleFactor="1" FuzzySelectorArgument="&lt;webctrl class='export-option' parentid='app' tag='DIV' type='' aaname='' check:innerText='Details Only&amp;#xA;Export only the detail rows.' /&gt;" Guid="fdb27454-a65f-4abc-a39b-5b171c9d007e" InformativeScreenshot="a87270e12ff0ea5695db280f61af1606.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sales Opportunities' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -181,7 +181,7 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Export'" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93ccc88-2ce0-46c0-893a-338a4408590b" Version="V4">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Export' para iniciar download" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="f93ccc88-2ce0-46c0-893a-338a4408590b" Version="V4">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.rpasamples.com/opportunities" CVScreenId="78debb12-8378-4391-909e-9fe726ae9216" CvElementArea="828, 591, 80, 36" CvTextArea="847, 601, 43, 16" CvTextArgument="Export" CvType="Button" DesignTimeRectangle="831, 593, 76, 32" DesignTimeScaleFactor="1" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aaname=' Export ' tag='BUTTON' type='' class='export-common footer-button' check:innerText='Export' /&gt;" Guid="3bc43e10-f6ec-44ed-9459-83dd70ae760b" InformativeScreenshot="0f58e5c53b4bf9255e860bde85f58b00.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sales Opportunities' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -202,12 +202,16 @@
                 </uix:VerifyExecutionOptions>
               </uix:NClick.VerifyOptions>
             </uix:NClick>
-            <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[&quot;C:\Users\&quot; + Environment.UserName + &quot;\Downloads&quot;]" File="[out_OpportunitiesTable]" sap:VirtualizedContainerService.HintSize="434,303" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
+            <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" sap2010:Annotation.AnnotationText="Aguarda a conclusão do download e retorna o caminho do arquivo baixado." DisplayName="Wait for Download" DownloadFolder="[&quot;C:\Users\&quot; + Environment.UserName + &quot;\Downloads&quot;]" File="[out_OpportunitiesTable]" sap:VirtualizedContainerService.HintSize="434,338" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
               <ui:GetLastDownloadedFile.Body>
                 <ActivityAction />
               </ui:GetLastDownloadedFile.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:GetLastDownloadedFile>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Caminho: &quot; + out_OpportunitiesTable.ToString]" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
